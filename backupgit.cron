@@ -1,0 +1,3 @@
+git -C /var/www/html/php/baitap1 add .
+git -C /var/www/html/php/baitap1 commit -m "test auto commit `date`"
+git -C /var/www/html/php/baitap1 push commitphp master
