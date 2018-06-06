@@ -15,7 +15,7 @@ BACKUP_DIR    = $(date +"%Y/%m")
 
 # Check current Git status and update
 ${GIT} status
-${GIT} pull commitphp HEAD
+${GIT} pull commitphp master
 
 # Dump database
 ${MYSQL_DUMP} -u "$CRON_USER" $DB_NAME > $TEMP_BACKUP & 
@@ -35,4 +35,4 @@ rm -f $TEMP_BACKUP
 # Add to Git and commit
 ${GIT} add -A
 ${GIT} commit -m "Automatic backup - $FULLDATE"
-${GIT} push commitphp HEAD
+${GIT} push commitphp master
